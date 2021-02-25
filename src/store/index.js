@@ -1,5 +1,5 @@
-import {applyMiddleware, createStore, combineReducers} from "redux";
-// import {createStore, applyMiddleware} from "../kredux/";
+// import {applyMiddleware, createStore, combineReducers} from "redux";
+import {createStore, applyMiddleware} from "../kredux/";
 // import thunk from "redux-thunk";
 // import logger from "redux-logger";
 // import promise from "redux-promise";
@@ -19,7 +19,8 @@ function countReducer(state = 0, action) {
 
 // 数据仓库 get set subscribe（订阅）
 const store = createStore(
-  combineReducers({count: countReducer}),
+  countReducer,
+  // combineReducers({count: countReducer}),
   applyMiddleware(thunk, promise, logger)
 );
 

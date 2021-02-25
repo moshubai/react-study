@@ -42,7 +42,7 @@ export default function App(props) {
 // // f1(f2(f3("omg")));
 
 // // step3:
-// let res = compose(f1)("omg");
+// let res = compose(f1, f2, f3)("omg");
 // console.log("res", res); //sy-log
 
 // // 返回一个复合函数

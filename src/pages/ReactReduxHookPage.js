@@ -5,13 +5,18 @@ export default function ReactReduxHookPage(props) {
     const count = useSelector((state) => state.count)
     const dispatch = useDispatch()
     const addFun = useCallback(() => {
+        
         dispatch({ type: 'ADD' })
     }, [])
     return (
         <React.Fragment>
-            <p>ReactReduxHookPage</p>
+            <p>函数组件：ReactReduxHookPage</p>
             <p>{count}</p>
             <p onClick={addFun}>点击增加</p>
         </React.Fragment>
     )
 }
+
+
+// useCallback 缓存函数
+// useMemo 缓存参数

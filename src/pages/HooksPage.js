@@ -1,6 +1,6 @@
 // useCallback 缓存函数
 // useMemo 缓存参数
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer, useEffect, useLayoutEffect } from 'react'
 import { counterReducer } from "../store/counterReducer";
 const init = (initArg) => initArg - 0
 
@@ -15,6 +15,13 @@ export default function HooksPage(props) {
             console.log('willunmount'); //log
         };
     }, []);
+
+    useLayoutEffect(() => {
+        console.log('didMount===useLayoutEffect'); //log
+        return () => {
+            console.log('willunmount===useLayoutEffect'); //log
+        };
+    }, []);
     return (
         <React.Fragment>
             <h3>HooksPage</h3>
@@ -24,16 +31,3 @@ export default function HooksPage(props) {
 }
 
 
-// react 自身的HooksApi
-/*
-useState
-useEffect
-useContext
-
-useReducer 复杂的状态 简单复用
-useCallBack 缓存函数
-useMemo 缓存参数
-useRef
-
-
-*/

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import ReduxPage from "./pages/ReduxPage";
-import ReactReduxPage from './pages/ReactReduxPage'
-// import HooksPage from './pages/HooksPage'
+// import ReactReduxPage from './pages/ReactReduxPage'
+import HooksPage from './pages/HooksPage'
 
 
 export default function App(props) {
@@ -11,9 +11,9 @@ export default function App(props) {
       <button onClick={() => setstate(state + 1)}>加法{state}</button>
 
       {/* <ReduxPage /> */}
-      <ReactReduxPage/>
+      {/* <ReactReduxPage/> */}
 
-      {/* {state % 2 && <HooksPage />} */}
+      {state % 2 && <HooksPage />}
     </div>
   );
 }

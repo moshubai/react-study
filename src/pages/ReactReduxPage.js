@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 // import store from "../store/";
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+// import { bindActionCreators } from 'redux'
+import { bindActionCreators } from '../react-redux/react-redux'
 import ReactReduxHookPage from './ReactReduxHookPage'
+
+// 使用react-redux的情况
 
 @connect(
     // mapStateToProps
@@ -28,8 +31,6 @@ class ReduxPage extends Component {
     componentWillUnmount() {
 
     }
-
-
 
     render() {
         console.log('this.props', this.props); //log

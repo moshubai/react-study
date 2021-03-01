@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import store from "../store/";
+// 不使用react-redux 中间件的情况下
 
 export default class ReduxPage extends Component {
   componentDidMount() {

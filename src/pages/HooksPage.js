@@ -22,6 +22,7 @@ export default function HooksPage(props) {
             console.log('willunmount===useLayoutEffect'); //log
         };
     }, []);
+
     return (
         <React.Fragment>
             <h3>HooksPage</h3>

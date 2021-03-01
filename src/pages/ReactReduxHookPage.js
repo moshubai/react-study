@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 export default function ReactReduxHookPage(props) {
     const count = useSelector((state) => state.count)
     const dispatch = useDispatch()
+    
     const addFun = useCallback(() => {
-        
         dispatch({ type: 'ADD' })
     }, [])
     return (
@@ -16,7 +16,3 @@ export default function ReactReduxHookPage(props) {
         </React.Fragment>
     )
 }
-
-
-// useCallback 缓存函数
-// useMemo 缓存参数

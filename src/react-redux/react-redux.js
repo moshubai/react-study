@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useContext, useEffect, useLayoutEffect, useReducer, useState } from 'react'
 // 跨层级数据传递
 // 分三步走
 // * 1 ：创建一个context对象
@@ -6,6 +6,7 @@ const Context = React.createContext();
 
 // * 2 ：使用Provider传递value
 export function Provider({ store, children }) {
+    console.log('store', store); //log
     return <Context.Provider value={store}>{children}</Context.Provider>
 }
 
@@ -19,10 +20,45 @@ export const connect = (
     mapStateToProps = (state) => state,
     mapDispatchToProps
 ) => (WrappedComponent) => (props) => {
-    const stateProps = {}
-    const dispatchProps = {}
-    return <WrappedComponent {...props} />
+    const store = useContext(Context)
+    const { getState, dispatch } = store
+    const stateProps = mapStateToProps(getState())
+    let dispatchProps = { dispatch }
+
+    if (typeof mapDispatchToProps === 'function') {
+        dispatchProps = mapDispatchToProps(dispatch)
+    } else if (typeof mapDispatchToProps === 'object') {
+        dispatchProps = bindActionCreators(mapDispatchToProps, dispatch)
+
+    }
+
+    // const [, forceUpdate] = useReducer((x) => x + 1, 0)
+    const forceUpdate = useForceUpdate()
+
+    useLayoutEffect(() => {
+        const unsubscribe = store.subscribe(() => {
+            forceUpdate()
+        })
+        return () => {
+            // cleanup
+            unsubscribe()
+        };
+    }, [store]);
+
+    return <WrappedComponent {...props} {...stateProps}{...dispatchProps} />
 }
+
+
+function useForceUpdate() {
+    const [state, setState] = useState(0);
+    const update = useCallback(() => {
+        setState((prev) => prev + 1)
+    }, [])
+    return update
+}
+
+
+
 
 // 中间件
 function bindActionCreator(creators, dispatch) {

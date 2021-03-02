@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import store from "../store/";
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 // import { bindActionCreators } from 'redux'
-import { bindActionCreators } from '../react-redux/react-redux'
-import ReactReduxHookPage from './ReactReduxHookPage'
+import { bindActionCreators ,connect} from '../react-redux/react-redux'
+// import ReactReduxHookPage from './ReactReduxHookPage'
 
 // 使用react-redux的情况
 
@@ -11,7 +11,7 @@ import ReactReduxHookPage from './ReactReduxHookPage'
     // mapStateToProps
     // ({count})=>({count})
     (state) => ({ count: state.count, num: state.count2.num }),
-    // mapDispatchToProps
+    // mapDispatchToProps  function | object
     dispatch => {
         let creators = {
             add: () => ({ type: "ADD" }),
@@ -43,7 +43,7 @@ class ReduxPage extends Component {
                 <button onClick={add}>加法</button>
                 <button onClick={minus}>减法</button>
                 <button onClick={addFn}>简单的第二个</button>
-                <ReactReduxHookPage/>
+                {/* <ReactReduxHookPage/> */}
             </div>
         );
     }

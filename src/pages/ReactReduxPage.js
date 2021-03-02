@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import { connect } from 'react-redux'
 // import { bindActionCreators } from 'redux'
 import { bindActionCreators ,connect} from '../react-redux/react-redux'
-// import ReactReduxHookPage from './ReactReduxHookPage'
+import ReactReduxHookPage from './ReactReduxHookPage'
 
 // 使用react-redux的情况
 
@@ -43,7 +43,7 @@ class ReduxPage extends Component {
                 <button onClick={add}>加法</button>
                 <button onClick={minus}>减法</button>
                 <button onClick={addFn}>简单的第二个</button>
-                {/* <ReactReduxHookPage/> */}
+                <ReactReduxHookPage/>
             </div>
         );
     }

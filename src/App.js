@@ -1,17 +1,34 @@
-import React, { useState } from 'react'
-// import ReduxPage from "./pages/ReduxPage";
+import React, { } from 'react'
+import ReduxPage from "./pages/ReduxPage";
 import ReactReduxPage from './pages/ReactReduxPage'
-// import HooksPage from './pages/HooksPage'
+import HooksPage from './pages/HooksPage'
+import HomePage from './pages/HomePage'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 
 export default function App(props) {
-  const [state, setstate] = useState(1);
+  // const [state, setstate] = useState(1);
   return (
-    <div>
-      <button onClick={() => setstate(state + 1)}>加法{state}</button>
+
+    <div className="app">
+      <Router>
+        <Link to='/'>首页</Link> |
+        <Link to='/react-redux'>react-redux</Link> |
+        <Link to='/redux'>redux</Link> |
+        <Link to='/hook'>Hook</Link>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/react-redux" component={ReactReduxPage} />
+          <Route path="/redux" component={ReduxPage} />
+          <Route path="/hook" component={HooksPage} />
+          {/* <Route  component={404} /> */}
+        </Switch>
+      </Router>
+
+      {/* <button onClick={() => setstate(state + 1)}>加法{state}</button> */}
 
       {/* <ReduxPage /> */}
-      <ReactReduxPage/>
+      {/* <ReactReduxPage/> */}
 
       {/* {state % 2 && <HooksPage />} */}
     </div>

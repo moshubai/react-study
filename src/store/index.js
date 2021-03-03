@@ -1,5 +1,5 @@
 // import {applyMiddleware, createStore, combineReducers} from "redux";
-import { createStore, applyMiddleware, combineReducers } from "../kredux/";
+import { createStore, applyMiddleware, combineReducers } from "../x-redux/";
 // import thunk from "redux-thunk";
 // import logger from "redux-logger";
 // import promise from "redux-promise";

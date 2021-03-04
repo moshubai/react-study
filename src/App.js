@@ -3,8 +3,8 @@ import ReduxPage from "./pages/ReduxPage";
 import ReactReduxPage from './pages/ReactReduxPage'
 import HooksPage from './pages/HooksPage'
 import HomePage from './pages/HomePage'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from './x-react-router-dom'
 
 export default function App(props) {
   // const [state, setstate] = useState(1);
@@ -16,13 +16,13 @@ export default function App(props) {
         <Link to='/react-redux'>react-redux</Link> |
         <Link to='/redux'>redux</Link> |
         <Link to='/hook'>Hook</Link>
-        <Switch>
+        {/* <Switch> */}
           <Route exact path="/" component={HomePage} />
           <Route path="/react-redux" component={ReactReduxPage} />
           <Route path="/redux" component={ReduxPage} />
           <Route path="/hook" component={HooksPage} />
           {/* <Route  component={404} /> */}
-        </Switch>
+        {/* </Switch> */}
       </Router>
 
       {/* <button onClick={() => setstate(state + 1)}>加法{state}</button> */}

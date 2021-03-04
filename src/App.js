@@ -17,11 +17,11 @@ export default function App(props) {
         <Link to='/redux'>redux</Link> |
         <Link to='/hook'>Hook</Link>
         {/* <Switch> */}
-          <Route exact path="/" component={HomePage} />
-          <Route path="/react-redux" component={ReactReduxPage} />
-          <Route path="/redux" component={ReduxPage} />
-          <Route path="/hook" component={HooksPage} />
-          {/* <Route  component={404} /> */}
+        <Route exact path="/" component={HomePage} />
+        <Route path="/react-redux" component={ReactReduxPage} />
+        <Route path="/redux" component={ReduxPage} />
+        <Route path="/hook" component={HooksPage} />
+        {/* <Route  component={404} /> */}
         {/* </Switch> */}
       </Router>
 

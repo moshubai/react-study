@@ -1,13 +1,30 @@
 import React from 'react'
+import RouterContext from './RouterContext';
 
 class Router extends React.Component {
-    componentDidMount() { }
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            location: props.history.location
+        }
+    }
+    componentDidMount() {
+
+    }
     render() {
-        const { } = this.props;
         return (
-            <React.Fragment>
-                Router
-            </React.Fragment>
+            <RouterContext.Provider
+                value={{
+                    history: this.props.history,
+                    location: this.state.location,
+                }
+                }
+            >
+                { this.props.children}
+            </RouterContext.Provider >
+
+
         )
     }
 }

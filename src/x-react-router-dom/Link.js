@@ -1,9 +1,7 @@
 import React from 'react'
 
-export default function Link() {
+export default function Link({ to, children }) {
     return (
-        <React.Fragment>
-            Link
-        </React.Fragment>
+        <a href={to} >{children}</a>
     )
 }

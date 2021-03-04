@@ -11,9 +11,7 @@ class BrowserRouter extends React.Component {
     render() {
         // const { } = this.props;
         return (
-            <React.Fragment>
-                <Router history={this.istory} children={this.props.children} />
-            </React.Fragment>
+            <Router history={this.history} children={this.props.children} />
         )
     }
 }

@@ -4,7 +4,12 @@ import ReactReduxPage from './pages/ReactReduxPage'
 import HooksPage from './pages/HooksPage'
 import HomePage from './pages/HomePage'
 // import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { BrowserRouter as Router, Route, Link } from './x-react-router-dom'
+import { 
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+ } from './x-react-router-dom'
 
 export default function App(props) {
   // const [state, setstate] = useState(1);
@@ -16,13 +21,13 @@ export default function App(props) {
         <Link to='/react-redux'>react-redux</Link> |
         <Link to='/redux'>redux</Link> |
         <Link to='/hook'>Hook</Link>
-        {/* <Switch> */}
-        <Route exact path="/" component={HomePage} />
-        <Route path="/react-redux" component={ReactReduxPage} />
-        <Route path="/redux" component={ReduxPage} />
-        <Route path="/hook" component={HooksPage} />
-        {/* <Route  component={404} /> */}
-        {/* </Switch> */}
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/react-redux" component={ReactReduxPage} />
+          <Route path="/redux" component={ReduxPage} />
+          <Route path="/hook" component={HooksPage} />
+          {/* <Route  component={404} /> */}
+        </Switch>
       </Router>
 
       {/* <button onClick={() => setstate(state + 1)}>加法{state}</button> */}
@@ -34,6 +39,8 @@ export default function App(props) {
     </div>
   );
 }
+
+
 
 // const array1 = [1, 2, 3, 4];
 // const reducer = (accumulator, currentValue) => accumulator + currentValue;

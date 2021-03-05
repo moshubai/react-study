@@ -2,18 +2,14 @@ import React from 'react'
 import Router from './Router';
 import { createBrowserHistory } from 'history';
 
-class BrowserRouter extends React.Component {
+export default class BrowserRouter extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.history = createBrowserHistory()
     }
     componentDidMount() { }
     render() {
         // const { } = this.props;
-        return (
-            <Router history={this.history} children={this.props.children} />
-        )
+        return <Router history={this.history} children={this.props.children} />
     }
 }
-
-export default BrowserRouter

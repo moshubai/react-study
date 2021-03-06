@@ -15,7 +15,6 @@ class Switch extends React.Component {
 
                     // 使用React.Children.forEach来筛选
                     React.Children.forEach(this.props.children, (child) => {
-                        // console.log('child.props.path',child.props.path,location.pathname,child.props); //log
                         if (match == null) {
                             element = child;
                             match = child.props.path ? matchPath(location.pathname, child.props) : context.match

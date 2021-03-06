@@ -1,13 +1,12 @@
 import React from 'react'
-
 class HomePage extends React.Component {
     componentDidMount() { }
     render() {
         return (
-            <React.Fragment>
-                HomePage
-            </React.Fragment>
-        )
+            <div>
+                <h3>HomePage</h3>
+            </div>
+        );
     }
 }
 

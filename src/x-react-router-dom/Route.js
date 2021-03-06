@@ -11,7 +11,6 @@ class Route extends React.Component {
                     // console.log('context', context, this.props); //log
                     const { location } = context
                     const { path, children, component, render, computedMatch } = this.props
-                    // console.log('computedMatch',computedMatch); //log
                     const match = computedMatch
                         ? computedMatch : path
                             ? matchPath(location.pathname, this.props) : context.match;

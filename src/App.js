@@ -4,12 +4,12 @@ import ReactReduxPage from './pages/ReactReduxPage'
 import HooksPage from './pages/HooksPage'
 import HomePage from './pages/HomePage'
 // import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { 
+import {
   BrowserRouter as Router,
   Route,
   Link,
   Switch,
- } from './x-react-router-dom'
+} from './x-react-router-dom'
 
 export default function App(props) {
   // const [state, setstate] = useState(1);
@@ -22,7 +22,7 @@ export default function App(props) {
         <Link to='/redux'>redux</Link> |
         <Link to='/hook'>Hook</Link>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" children={ChildFn} component={HomePage} />
           <Route path="/react-redux" component={ReactReduxPage} />
           <Route path="/redux" component={ReduxPage} />
           <Route path="/hook" component={HooksPage} />
@@ -40,6 +40,9 @@ export default function App(props) {
   );
 }
 
+function ChildFn(params) {
+  return <h1>一直被渲染</h1>
+}
 
 
 // const array1 = [1, 2, 3, 4];

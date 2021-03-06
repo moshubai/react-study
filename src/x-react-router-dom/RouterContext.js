@@ -1,7 +1,5 @@
 import React from 'react';
-
 const RouterContext = React.createContext()
-
 export default RouterContext
 
 // step1 创建context对象

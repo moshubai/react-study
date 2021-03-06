@@ -17,9 +17,7 @@ class Router extends React.Component {
             })
         })
     }
-    componentDidMount() {
-
-    }
+    componentDidMount() { }
     componentWillUnmount() {
         this.unlisten()
     }
@@ -35,7 +33,7 @@ class Router extends React.Component {
             >
                 { this.props.children}
             </RouterContext.Provider >
-           
+
         )
     }
 }

@@ -137,7 +137,7 @@ static computeRootMatch(pathname) {
 ### 实现`Link.js`
 
 - 1. 根据路径可知，该组件起的作用定时那<a href=""><a/>。
-- 2. 所以实现 a 跳转，并去除刷新，即可完成此组件。
+- 2. 所以实现 <a></a>跳转，并去除刷新，即可完成此组件。
 
 ```
 const handleClick = (event) => {
@@ -217,3 +217,5 @@ React.Children.forEach(this.props.children, (child) => {
 ### 最后，就是整理思路。
 - 1. 明确API的作用和数据的流向。
 - 2. 利用可复用的组件和路径的匹配进行匹配并渲染。
+
+本文源码归处[☞源码](https://github.com/moshubai/react-study) 

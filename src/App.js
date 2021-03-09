@@ -3,12 +3,13 @@ import ReduxPage from "./pages/ReduxPage";
 import ReactReduxPage from './pages/ReactReduxPage'
 import HooksPage from './pages/HooksPage'
 import HomePage from './pages/HomePage'
-// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Link, Switch ,Prompt } from 'react-router-dom'
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Switch,
+  Prompt
 } from './x-react-router-dom'
 
 export default function App(props) {
@@ -22,7 +23,7 @@ export default function App(props) {
         <Link to='/redux'>redux</Link> |
         <Link to='/hook'>Hook</Link>
         <Switch>
-          <Route exact path="/" children={ChildFn} component={HomePage} />
+          <Route exact path="/" component={HomePage} />
           <Route path="/react-redux" component={ReactReduxPage} />
           <Route path="/redux" component={ReduxPage} />
           <Route path="/hook" component={HooksPage} />

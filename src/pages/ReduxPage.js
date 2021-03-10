@@ -46,7 +46,7 @@ export default class ReduxPage extends Component {
 
   addFn = () => {
     store.dispatch({
-      type: "ADDFN",
+      type: "ADD",
       payload: 100,
     });
   }
@@ -56,7 +56,6 @@ export default class ReduxPage extends Component {
       <div>
         <h3>ReduxPage</h3>
         <p>{store.getState().count}</p>
-        <p>{store.getState().count2.num}</p>
         <button onClick={this.add}>add</button>
         <button onClick={this.asyAdd}>asyAdd</button>
         <button onClick={this.promiseMinus}>asyAdd</button>

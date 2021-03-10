@@ -1,49 +1,13 @@
 import React, { } from 'react'
-import ReduxPage from "./pages/ReduxPage";
-import ReactReduxPage from './pages/ReactReduxPage'
-import HooksPage from './pages/HooksPage'
-import HomePage from './pages/HomePage'
-// import { BrowserRouter as Router, Route, Link, Switch ,Prompt } from 'react-router-dom'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Prompt
-} from './x-react-router-dom'
+
+import Routers from './routes'
+
 
 export default function App(props) {
-  // const [state, setstate] = useState(1);
-  return (
-
-    <div className="app">
-      <Router>
-        <Link to='/'>首页</Link> |
-        <Link to='/react-redux'>react-redux</Link> |
-        <Link to='/redux'>redux</Link> |
-        <Link to='/hook'>Hook</Link>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/react-redux" component={ReactReduxPage} />
-          <Route path="/redux" component={ReduxPage} />
-          <Route path="/hook" component={HooksPage} />
-          {/* <Route  component={404} /> */}
-        </Switch>
-      </Router>
-
-      {/* <button onClick={() => setstate(state + 1)}>加法{state}</button> */}
-
-      {/* <ReduxPage /> */}
-      {/* <ReactReduxPage/> */}
-
-      {/* {state % 2 && <HooksPage />} */}
-    </div>
-  );
+ 
+  return <Routers/>
 }
 
-function ChildFn(params) {
-  return <h1>一直被渲染</h1>
-}
 
 
 // const array1 = [1, 2, 3, 4];

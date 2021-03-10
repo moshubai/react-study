@@ -9,18 +9,18 @@ module.exports = {
   plugins: [
     {
       plugin: CracoLessPlugin,
-      options: {
-        lessLoaderOptions: {
-          lessOptions: {
-            modifyVars: {
-              "@primary-color": "red",
-              "@border-color-base": "green",
-              "@link-color": "orange"
-            },
-            javascriptEnabled: true
-          }
-        }
-      }
+      // options: {
+      //   lessLoaderOptions: {
+      //     lessOptions: {
+      //       modifyVars: {
+      //         "@primary-color": "red",
+      //         "@border-color-base": "green",
+      //         "@link-color": "orange"
+      //       },
+      //       javascriptEnabled: true
+      //     }
+      //   }
+      // }
     }
   ]
 };

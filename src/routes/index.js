@@ -26,8 +26,7 @@ export const routes = [
   },
   {
     path: "/login",
-    component: LoginIn,
-    auth: PrivateRoute,
+    component: LoginIn
   },
   {
     path: "/react-redux",
@@ -63,12 +62,22 @@ export default function Routes() {
         <Link to='/redux'>redux</Link> |
         <Link to='/hook'>Hook</Link>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          {
+            routes.map((Route_, index) =>
+              Route_.auth ?
+                (
+                  <Route_.auth key={Route_.path + index} {...Route_} />
+                )
+                :
+                (<Route key={Route_.path + index} {...Route_} />)
+            )
+          }
+          {/* <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginIn} />
           <PrivateRoute path="/react-redux" component={ReactReduxPage} />
           
           <Route path="/redux" component={ReduxPage} />
-          <Route path="/hook" component={HooksPage} />
+          <Route path="/hook" component={HooksPage} /> */}
           {/* <Route  component={404} /> */}
         </Switch>
       </Router>

@@ -27,14 +27,22 @@ function createNode(vnode) {
         node = type.prototype.isReactComponent
             ? updateClassComponent(vnode)
             : updateFunctionComponent(vnode);
+    } else {
+        node = createFragmentComponent(vnode)
     }
+    return node
+}
+// 
+function createFragmentComponent(vnode) {
+    const node = document.createDocumentFragment()
+    reconcileChildren(node,vnode.props.children)
     return node
 }
 // 函数组件
 /*
 含数组件的typeof 是function
 
-*/ 
+*/
 function updateFunctionComponent(vnode) {
     const { type, props } = vnode;
     const child = type(props);

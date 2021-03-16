@@ -34,13 +34,26 @@ function Func() {
     )
 }
 
+function FragmentComp() {
+    return (
+        <>
+            <h2>FragmentComp</h2>
+            <h2>FragmentComp</h2>
+        </>
+    )
+}
 
 const jsx = (
     <div className='title'>
         <h2>react - 源码实现</h2>
         <a href='https://zh-hans.reactjs.org/'>React</a>
         <Func />
-        <ClassComp title='类组件'/>
+        <ClassComp title='类组件' />
+        <>
+            <h2>FragmentComp</h2>
+            <h2>FragmentComp</h2>
+        </>
+        <FragmentComp />
     </div>
 )
 

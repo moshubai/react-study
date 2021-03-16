@@ -1,6 +1,12 @@
-### React 面试题
+## React 面试题
 
-- React 自身的 HooksApi
+
+
+### 什么是虚拟DOM
+
+> 虚拟DOM：用于表示DOM结构的js对象。用js对象表示dom对象（链表结构）
+
+### React 自身的 HooksApi
 
 > useState 状态(state，以及更新 state 的函数)
 

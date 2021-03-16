@@ -16,22 +16,9 @@ code {
   padding: 10px;
 }
 
-.border {
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px red;
-}
-
-.red {
+.title{
+  font-size: 18px;
   color: red;
-}
-
-.green {
-  color: green;
-}
-
-.pink {
-  color: pink;
 }
 
 .dialog {

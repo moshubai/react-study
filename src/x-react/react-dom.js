@@ -35,7 +35,7 @@ function createNode(vnode) {
 // 
 function createFragmentComponent(vnode) {
     const node = document.createDocumentFragment()
-    reconcileChildren(node,vnode.props.children)
+    reconcileChildren(node, vnode.props.children)
     return node
 }
 // 函数组件

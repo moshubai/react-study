@@ -36,14 +36,14 @@ function performUnitOfWork(workInProgress) {
     if (typeof type === 'string') {
         updateHostComponent(workInProgress)
     } else if (typeof type === "function") {
-       
-        type.prototype.isReactComponent
-        ? updateClassComponent(workInProgress)
-        : updateFunctionComponent(workInProgress);
 
-    }else {
-        console.log('typetypetypetype',type); //log
-         createFragmentComponent(workInProgress)
+        type.prototype.isReactComponent
+            ? updateClassComponent(workInProgress)
+            : updateFunctionComponent(workInProgress);
+
+    } else {
+        console.log('typetypetypetype', type); //log
+        createFragmentComponent(workInProgress)
     }
 
     // step 2 返回下一个任务，
@@ -83,7 +83,7 @@ window.requestIdleCallback()方法将在浏览器的空闲时段内调用的函�
 如动画和输入响应。函数一般会按先进先调用的顺序执行，
 然而，如果回调函数指定了执行超时时间timeout，
 则有可能为了在超时前执行函数而打乱执行顺序。
-*/ 
+*/
 requestIdleCallback(workLoop);
 
 function commitRoot() {
@@ -141,8 +141,8 @@ function createNode(workInProgress) {
 // 
 function createFragmentComponent(workInProgress) {
     console.log('===================='); //log
-    const node = document.createDocumentFragment()
-    reconcileChildren(node, workInProgress.props.children)
+    // const node = document.createDocumentFragment()
+    reconcileChildren(workInProgress, workInProgress.props.children)
 }
 // 函数组件
 
@@ -179,15 +179,15 @@ function updateHostComponent(workInProgress) {
 
 function updateNode(node, nextVal) {
     Object.keys(nextVal).forEach((k) => {
-            if (k === 'children') {
-                if (isStringOrNumber(nextVal[k])) {
-                    node.textContent = nextVal[k]
-                }
-            } else {
-                // 直接复制，属性没考虑
-                node[k] = nextVal[k]
+        if (k === 'children') {
+            if (isStringOrNumber(nextVal[k])) {
+                node.textContent = nextVal[k]
             }
-        })
+        } else {
+            // 直接复制，属性没考虑
+            node[k] = nextVal[k]
+        }
+    })
 }
 function reconcileChildren(workInProgress, children) {
     // 文本，数字，不能做处理

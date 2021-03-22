@@ -1,5 +1,5 @@
 // import ReactDOM from "react-dom";
-
+// import React, { Component, useState } from 'react'
 import "./index.css";
 // import App from "./App";
 // // import { Provider } from 'react-redux';
@@ -16,12 +16,17 @@ import "./index.css";
 // react-redux 是一个react与redux的绑定库，背后原理就是Context
 
 
+
+
+
 // 简单实现react源码  没有fiber（分片）
 // import ReactDOM from './x-react/react-dom'
 // import Component from './x-react/Component';
 
+
+
 // 简单实现react源码  有fiber（分片）
-import ReactDOM from './x-fiber-react/react-dom'
+import ReactDOM, { useState } from './x-fiber-react/react-dom'
 import Component from './x-fiber-react/Component';
 
 class ClassComp extends Component {
@@ -33,8 +38,13 @@ class ClassComp extends Component {
 }
 
 function Func() {
+    const [Count, setCount] = useState(0);
     return (
-        <h3>函数组件</h3>
+        <div>
+            <p>函数组件</p>
+            <h3 onClick={() => setCount(Count + 1)}>{Count}</h3>
+        </div>
+        
     )
 }
 

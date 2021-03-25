@@ -99,3 +99,40 @@ function promiseAll(promises) {
 }
 // https://www.jianshu.com/p/5119e01a036f
 ```
+
+### 说一说事件代理，优缺点是什么？实现原理是什么？
+
+- 事件代理是指将事件绑定到目标元素的父元素上，利用冒泡机制触发该事件优点：可以减少事件注册，节省大量内存占用可以将事件应用于动态添加的子元素上
+- 缺点： 使用不当会造成事件在不应该触发时触发 ulEl.addEventListener
+
+```js
+"click",
+  function (e) {
+    var target = event.target || event.srcElement;
+    if (!!target && target.nodeName.toUpperCase() === "LI") {
+      console.log(target.innerHTML);
+    }
+  },
+  false;
+```
+
+### 阅读以下代码，说出输出结果，并解析其原因 console.log('a');
+
+```js
+setTimeout(function () {
+  console.log("b");
+  new Promise(function (resolve) {
+    console.log("c");
+    resolve();
+  }).then(function () {
+    console.log("d");
+  });
+});
+new Promise(function (resolve) {
+  console.log("e");
+  resolve();
+}).then(function () {
+  console.log("f");
+});
+//aefbcd
+```
